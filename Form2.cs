@@ -21,5 +21,10 @@ namespace CookieClicker
         {
 
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

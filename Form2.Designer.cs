@@ -50,6 +50,7 @@ namespace CookieClicker
             this.Controls.Add(this.managersReturn);
             this.Name = "Form2";
             this.Text = "Managers";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }

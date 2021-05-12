@@ -31,7 +31,7 @@ namespace CookieClicker
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonLemons = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.countLabel = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -50,20 +50,24 @@ namespace CookieClicker
             this.bankBar = new System.Windows.Forms.ProgressBar();
             this.jakeBar = new System.Windows.Forms.ProgressBar();
             this.lemonadeTimer = new System.Windows.Forms.Timer(this.components);
+            this.carwashTimer = new System.Windows.Forms.Timer(this.components);
+            this.donutTimer = new System.Windows.Forms.Timer(this.components);
+            this.bankTimer = new System.Windows.Forms.Timer(this.components);
+            this.jakeTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonLemons
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.button1.Location = new System.Drawing.Point(92, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 85);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonLemons.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLemons.BackgroundImage")));
+            this.buttonLemons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLemons.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonLemons.Location = new System.Drawing.Point(92, 43);
+            this.buttonLemons.Name = "buttonLemons";
+            this.buttonLemons.Size = new System.Drawing.Size(100, 85);
+            this.buttonLemons.TabIndex = 0;
+            this.buttonLemons.UseVisualStyleBackColor = true;
+            this.buttonLemons.Click += new System.EventHandler(this.buttonLemons_Click);
             // 
             // label1
             // 
@@ -185,6 +189,7 @@ namespace CookieClicker
             this.lemonadeBar.BackColor = System.Drawing.SystemColors.Control;
             this.lemonadeBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lemonadeBar.Location = new System.Drawing.Point(242, 70);
+            this.lemonadeBar.MarqueeAnimationSpeed = 5000;
             this.lemonadeBar.Name = "lemonadeBar";
             this.lemonadeBar.Size = new System.Drawing.Size(366, 37);
             this.lemonadeBar.Step = 25;
@@ -195,11 +200,13 @@ namespace CookieClicker
             // 
             this.carBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.carBar.Location = new System.Drawing.Point(242, 173);
+            this.carBar.Maximum = 50;
             this.carBar.Name = "carBar";
             this.carBar.Size = new System.Drawing.Size(366, 37);
             this.carBar.Step = 20;
             this.carBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.carBar.TabIndex = 15;
+            this.carBar.Click += new System.EventHandler(this.carBar_Click);
             // 
             // donutBar
             // 
@@ -234,6 +241,22 @@ namespace CookieClicker
             // 
             this.lemonadeTimer.Tick += new System.EventHandler(this.lemonadeTimer_Tick);
             // 
+            // carwashTimer
+            // 
+            this.carwashTimer.Tick += new System.EventHandler(this.carwashTimer_Tick);
+            // 
+            // donutTimer
+            // 
+            this.donutTimer.Tick += new System.EventHandler(this.donutTimer_Tick);
+            // 
+            // bankTimer
+            // 
+            this.bankTimer.Tick += new System.EventHandler(this.bankTimer_Tick);
+            // 
+            // jakeTimer
+            // 
+            this.jakeTimer.Tick += new System.EventHandler(this.jakeTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,12 +276,13 @@ namespace CookieClicker
             this.Controls.Add(this.button2);
             this.Controls.Add(this.countLabel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonLemons);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Main Menu";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -268,7 +292,7 @@ namespace CookieClicker
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonLemons;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label countLabel;
         private System.Windows.Forms.Button button2;
@@ -287,6 +311,10 @@ namespace CookieClicker
         private System.Windows.Forms.ProgressBar bankBar;
         private System.Windows.Forms.ProgressBar jakeBar;
         private System.Windows.Forms.Timer lemonadeTimer;
+        private System.Windows.Forms.Timer carwashTimer;
+        private System.Windows.Forms.Timer donutTimer;
+        private System.Windows.Forms.Timer bankTimer;
+        private System.Windows.Forms.Timer jakeTimer;
     }
 }
 

@@ -38,6 +38,7 @@ namespace CookieClicker
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Form5";
             this.Text = "Unlocks";
+            this.Load += new System.EventHandler(this.Form5_Load);
             this.ResumeLayout(false);
 
         }
